@@ -17,7 +17,7 @@ public class ThirdFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
-        ((TextView) view.findViewById(R.id.textView)).setText("Third Fragment");
+        ((TextView) view.findViewById(R.id.textView)).setText(R.string.third_fragment);
         return view;
     }
 }

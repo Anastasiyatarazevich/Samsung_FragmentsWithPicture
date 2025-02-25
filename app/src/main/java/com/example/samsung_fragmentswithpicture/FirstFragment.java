@@ -9,10 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.squareup.picasso.Picasso;
 
@@ -39,6 +42,18 @@ public class FirstFragment extends Fragment {
         mainHandler = new Handler(Looper.getMainLooper());
 
         loadImage("https://www.meme-arsenal.com/memes/78a26e460feacdb80ef3d50abf42f5a2.jpg");
+
+        NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
+
+        // Обработчик клика на кнопку
+        Button buttonGoToFourth = view.findViewById(R.id.buttonGoToFourth);
+        buttonGoToFourth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_firstFragment_to_fourthFragment);
+            }
+        });
+
 
         return view;
     }
